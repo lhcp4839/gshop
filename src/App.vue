@@ -6,14 +6,21 @@
 </template>
 
 <script>
+  import {mapActions} from 'vuex'
+  import FooterGuide from './components/FooterGuide/FooterGuide'
+  export default {
+    mounted () {
+      this.getAddress()
+      this.getUserInfo()
+    },
 
-import FooterGuide from './components/FooterGuide/FooterGuide'
-export default {
-  
-  components: {
-    FooterGuide
+    methods: {
+      ...mapActions(['getAddress', 'getUserInfo'])
+    },
+    components: {
+      FooterGuide
+    }
   }
-}
 </script>
 
 <style lang="stylus">
@@ -21,4 +28,4 @@ export default {
   @import './static/css/reset.css'
   
 </style>
-/* 70 */
+/* 100 */
